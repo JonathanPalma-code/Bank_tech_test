@@ -2,10 +2,12 @@ require 'account'
 
 describe Account do
   subject(:account) { described_class.new }
+  let(:statement) { Statement.new }
 
-  describe "#initialize" do
+  describe "#initialise" do
     it "should give an initial balance of 0£" do
       expect(account.balance).to eq 0.00
+      expect(account.statement).to eq []
     end
   end
 
