@@ -2,7 +2,7 @@ require 'statement'
 
 describe Statement do
   subject(:statement) { described_class.new }
-  let(:transaction) { Transaction.new(1000, nil, 2000) }
+  let(:transaction) { Transaction.new(1000, "", 2000) }
 
   describe "#initialise" do
     it "should be empty" do
