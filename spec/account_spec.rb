@@ -15,12 +15,26 @@ describe Account do
     it "should add money into the account" do
       expect(account.credit(1000)).to eq balance
     end
+
+    context "when incorrect input" do
+      it "raises an error" do
+        message = "Invalid operation: please enter a correct amount."
+        expect { account.credit(-1000) }.to raise_error OrderError, message
+      end
+    end
   end
 
   describe "#debit" do
     it "should withraw from the account" do
       account.credit(2000)
       expect(account.debit(1000)).to eq balance
+    end
+
+    context "when insufficient balance or incorrect input" do
+      it "raises an error" do
+        message = "Invalid operation: please enter a correct amount."
+        expect { account.debit(1000) }.to raise_error OrderError, message
+      end
     end
   end
 

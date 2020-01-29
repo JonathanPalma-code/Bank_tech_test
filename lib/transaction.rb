@@ -9,16 +9,24 @@ class Transaction
   end
 
   def print
-    "#{date} || #{credit(credit_amount)} || #{debit(debit_amount)} || #{"%.2f" % balance}"
+    "#{date} || #{credit} || #{debit} || #{"%.2f" % balance}"
   end
 
   private
 
-  def credit(amount)
+  def credit
+    deposit(credit_amount)
+  end
+
+  def debit
+    withraw(debit_amount)
+  end
+
+  def deposit(amount)
     amount == "" ? "" : "#{"%.2f" % amount}"
   end
 
-  def debit(amount)
+  def withraw(amount)
     amount == "" ? "" : "#{"%.2f" % amount}"
   end
 end

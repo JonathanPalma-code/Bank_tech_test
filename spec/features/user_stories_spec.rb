@@ -23,4 +23,13 @@ describe "User Stories" do
     account.credit(2000)
     expect { account.debit(1000) }.to_not raise_error
   end
+
+  # As a user
+  # So that I can manage my transactions
+  # I would like see my full statement
+  it "should start with an empty statement" do
+    account.credit(2000)
+    account.debit(1000) 
+    expect { account.print_statement }.to_not raise_error
+  end
 end
