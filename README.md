@@ -84,5 +84,7 @@ bundle exec rspec
 ```
 bundle exec rubocop
 ```
+### Running IRB:
 
+![image](https://user-images.githubusercontent.com/55409351/73473337-7ff92580-4384-11ea-9583-5a471968e1e7.png)
 
