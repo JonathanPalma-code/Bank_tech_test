@@ -8,21 +8,13 @@ describe Transaction do
   describe "#initialise" do
     it "should implement a credit action" do
       Timecop.freeze do
-        expect(credit_transaction.credit_amount).to eq 1000
-        expect(credit_transaction.debit_amount).to eq ""
-        expect(credit_transaction.balance).to eq 2000
-        expect(credit_transaction.date).to eq "29/01/2020"
-        expect(credit_transaction.print).to eq "29/01/2020 || 1000.00 ||  || 2000.00"
+        expect(credit_transaction.print).to eq Time.now.strftime "%d/%m/%Y || 1000.00 ||  || 2000.00"
       end
     end
 
     it "should implement a debit action" do
       Timecop.freeze do
-        expect(debit_transaction.credit_amount).to eq ""
-        expect(debit_transaction.debit_amount).to eq(-1000)
-        expect(debit_transaction.balance).to eq 1000
-        expect(debit_transaction.date).to eq "29/01/2020"
-        expect(debit_transaction.print).to eq "29/01/2020 ||  || -1000.00 || 1000.00"
+        expect(debit_transaction.print).to eq Time.now.strftime "%d/%m/%Y ||  || -1000.00 || 1000.00"
       end
     end
   end
