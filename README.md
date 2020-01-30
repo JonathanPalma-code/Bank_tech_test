@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/55409351/73471187-dc5a4600-4380-11ea-8a0c-7b40ff5e337e.png)
 
+![Travis (.org)](https://travis-ci.com/JonathanPalma-code/Bank_tech_test.svg?branch=master)
+
 Bank tech test
 An un-timed tech-test with the following requirements:
 
