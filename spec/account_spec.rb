@@ -22,12 +22,22 @@ describe Account do
       expect(transaction_class).to receive(:new).with(1000, "", 1000)
       account.credit(1000)
     end
+    context "when insufficient balance or incorrect input" do
+      it "raises an error" do
+        expect { account.credit(-1000) }.to raise_error OrderError, Account::ERROR
+      end
+    end
   end
 
   describe "#debit" do
     it "should withraw from the account" do
       account.credit(2000)
       expect(account.debit(1000)).to eq balance
+    end
+    context "when insufficient balance or incorrect input" do
+      it "raises an error" do
+        expect { account.debit(1000) }.to raise_error OrderError, Account::ERROR
+      end
     end
   end
 end
